@@ -1,0 +1,12 @@
+{
+    "app": "sh cdk_hooks.sh pre && npx ts-node build/project.ts && sh cdk_hooks.sh post",
+    "context": {
+        "@aws-cdk/core:enableStackNameDuplicates": "true",
+        "aws-cdk:enableDiffNoFail": "true",
+        "@aws-cdk/core:stackRelativeExports": "true",
+        "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
+        "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": true,
+        "@aws-cdk/aws-kms:defaultKeyPolicies": true,
+        "@aws-cdk/aws-s3:grantWriteWithoutAcl": true
+    }
+}
